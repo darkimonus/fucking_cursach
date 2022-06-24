@@ -31,15 +31,22 @@ public class MainController {
             return "redirect:/admin";
         }
         if(auth != null && auth.getAuthorities().contains(new Role(3, null))){
-            return "redirect:/courier";
+            return "redirect:/courier_orders";
         }
             else {
             return "redirect:/home";
         }
     }
+    @RequestMapping(value = "/home", method = RequestMethod.GET)
+    public String home(Model model, Authentication authentication) {
+        if (authentication != null) {
+            model.addAttribute("user", authentication.getPrincipal());
+        }
+        return "home";
+    }
 //
 
-    @RequestMapping(value = "/home", method = RequestMethod.GET)
+/*    @RequestMapping(value = "/home", method = RequestMethod.GET)
     public String home(Model model, Authentication authentication) {
         model.addAttribute("models", possibleModelRepository.findAll());
         model.addAttribute("options", new String[]{"1", "2", "3", "4"});
@@ -47,5 +54,6 @@ public class MainController {
             model.addAttribute("user", authentication.getPrincipal());
         }
         return "home";
-    }
+    }*/
+
 }

@@ -35,7 +35,7 @@ public class User implements UserDetails {
     @Column(name = "password")
     private String password;
 
-    @OneToOne
+    @ManyToOne
     private Role role;
 
     public User() {

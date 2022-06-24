@@ -46,5 +46,4 @@ public class AuthenticationController {
         modelAndView.setViewName("home");
         return modelAndView;
     }
-
 }
