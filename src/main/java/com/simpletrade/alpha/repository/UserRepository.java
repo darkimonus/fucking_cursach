@@ -1,4 +1,4 @@
-package com.simpletrade.alpha;
+package com.simpletrade.alpha.repository;
 
 import com.simpletrade.alpha.model.User;
 import org.springframework.data.jpa.repository.JpaRepository;

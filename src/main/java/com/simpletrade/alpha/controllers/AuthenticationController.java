@@ -1,13 +1,12 @@
 package com.simpletrade.alpha.controllers;
 
-import com.simpletrade.alpha.UserRepository;
+import com.simpletrade.alpha.repository.UserRepository;
 import com.simpletrade.alpha.model.Role;
 import com.simpletrade.alpha.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.Authentication;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -19,17 +18,10 @@ public class AuthenticationController {
     private UserRepository userRepository;
     @Autowired
     private PasswordEncoder passwordEncoder;
-//
-//	@RequestMapping(value = { "/login" }, method = RequestMethod.GET)
-//	public String login() {
-//		return "login";
-//	}
 
-    @RequestMapping(value = "/register", method = RequestMethod.GET)
+    @GetMapping("/register")
     public ModelAndView register() {
         ModelAndView modelAndView = new ModelAndView();
-        // User user = new User();
-        // modelAndView.addObject("user", user);
         modelAndView.setViewName("register"); // resources/template/register.html
         return modelAndView;
     }

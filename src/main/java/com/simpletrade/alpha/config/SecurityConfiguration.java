@@ -1,4 +1,4 @@
-package com.simpletrade.alpha;
+package com.simpletrade.alpha.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -24,6 +24,7 @@ public class SecurityConfiguration extends WebMvcConfigurerAdapter {
 				.antMatchers("/").permitAll()
 				.antMatchers("/register").permitAll()
 				.antMatchers("/home**").permitAll()
+				.antMatchers("/courier_orders").hasAuthority("courier")
 				.anyRequest().authenticated()
 				.and()
 				// form login

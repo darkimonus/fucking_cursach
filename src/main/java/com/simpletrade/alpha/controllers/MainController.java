@@ -1,11 +1,9 @@
 package com.simpletrade.alpha.controllers;
 
-import com.simpletrade.alpha.PossibleModelRepository;
-import com.simpletrade.alpha.UserRepository;
+import com.simpletrade.alpha.repository.PossibleModelRepository;
 import com.simpletrade.alpha.model.Role;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
-import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;

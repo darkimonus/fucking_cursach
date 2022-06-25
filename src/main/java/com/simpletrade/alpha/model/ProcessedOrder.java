@@ -1,8 +1,11 @@
 package com.simpletrade.alpha.model;
 
+import lombok.Data;
+
 import javax.persistence.*;
 
 @Entity
+@Data
 public class ProcessedOrder {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -15,28 +18,4 @@ public class ProcessedOrder {
 
     @ManyToOne
     Condition condition;
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public Order getOrder() {
-        return order;
-    }
-
-    public void setOrder(Order order) {
-        this.order = order;
-    }
-
-    public String getRating() {
-        return rating;
-    }
-
-    public void setRating(String rating) {
-        this.rating = rating;
-    }
 }
